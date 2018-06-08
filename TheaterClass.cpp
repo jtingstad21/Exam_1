@@ -9,6 +9,8 @@ Theater::Theater(string N, string P)
 
 void Theater::AddMovie(Movie& M)
 {
+	//PT -- You're adding this movie into all slots. Instead, keep track of how many movies
+	//      have been added, and each time you add a new one, insert it into the right slot
 	for (int i = 0; i < 10; i++)
 	{
 		MovieList[i] = M;
@@ -17,6 +19,7 @@ void Theater::AddMovie(Movie& M)
 
 string Theater::GetMovieForHour(int hour)
 {
+	//This assumes there's just one movie, and there are many
 	if (hour >= 0 && hour <= 23)
 	{
 		return Movie::GetTitle();
